@@ -192,7 +192,7 @@ exports.testCmd = (rl , id) => {
                         //biglog('Incorrecta','red');
                     }
 
-                });
+                })
         })
 
         .catch(error => {
@@ -220,8 +220,9 @@ exports.playCmd = rl  => {
     const playOne = () => {
         return Promise.resolve()
             .then(() => {
-                if (toBePlayed.length <= 0) {
+                if((toBePlayed === null) || (toBePlayed.length === 0)){
                     log(`No hay nada más que preguntar .`);
+                    log(`fin`);
                     log(`Fin del examen. Aciertos : `);
                     biglog(`${score}`, 'magenta');
                     rl.prompt();
@@ -234,13 +235,14 @@ exports.playCmd = rl  => {
 
                 makeQuestion(rl, `${quiz.question}`)
                     .then(answer => {
-                        if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
+                        if (answer.toLowerCase().trim()=== quiz.answer.toLowerCase().trim()) {
                             score++;
                             log(`CORRECTO - Lleva ${score} aciertos`);
                             return playOne();
                         } else {
                             log(`INCORRECTO.`);
                             log(`Fin del examen. Aciertos : `);
+                            log(`fin`);
                             biglog(`${score}`, 'magenta');
                             rl.prompt();
                         }
