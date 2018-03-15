@@ -80,7 +80,7 @@ rl
 
             default:
                 console.log(`Comando desconocido: '${colorize(cmd, 'red')}'`);
-                console.log(`Use ${colorize('help','gree')} para ver todos los comandos posibles. `);
+                console.log(`Use ${colorize('help','green')} para ver todos los comandos posibles. `);
                 rl.prompt();
                 break;
         }
