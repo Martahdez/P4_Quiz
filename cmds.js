@@ -243,7 +243,7 @@ exports.playCmd = rl  => {
                             log(`INCORRECTO.`);
                             log(`Fin del examen. Aciertos : `);
                             log(`fin`);
-                            biglog(`${score}`, 'magenta');
+                           // biglog(`${score}`, 'magenta');
                             rl.prompt();
                         }
                     })
